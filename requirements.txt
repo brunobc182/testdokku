@@ -1,3 +1,4 @@
 boto==2.45.0
+Django==1.9.7
 django-transfer==0.2.post2
 gunicorn==19.6.0
