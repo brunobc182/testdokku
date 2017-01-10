@@ -118,4 +118,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/static/'
+# AMAZON S3 CONFIGURATION
+AWS_ACCESS_KEY_ID = 'AKIAJ5SWL4QBPSYNPDEQ'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'encontremed-homolog'
+AWS_QUERYSTRING_AUTH = False
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+MEDIA_URL = STATIC_URL + 'media/'

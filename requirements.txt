@@ -1,0 +1,3 @@
+boto==2.45.0
+django-transfer==0.2.post2
+gunicorn==19.6.0
